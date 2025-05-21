@@ -1,0 +1,859 @@
+
+Choose algorithm:
+1. UCS (Uniform Cost Search)
+2. GBFS (Greedy Best-First Search)
+3. A* Search
+Choice: 2
+
+Initial board:
+                        
+   A  A  A  C  E  .   
+   .  .  B  C  E  D   
+   P  P  B  .  E  D  K  
+   F  .  H  H  I  I   
+   F  J  J  J  .  G   
+   L  L  L  .  .  G   
+                        
+
+Move 1: D-up
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   F  .  H  H  I  I   
+   F  J  J  J  .  G   
+   L  L  L  .  .  G   
+                        
+
+Move 2: H-left
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   F  H  H  .  I  I   
+   F  J  J  J  .  G   
+   L  L  L  .  .  G   
+                        
+
+Move 3: L-right
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   F  H  H  .  I  I   
+   F  J  J  J  .  G   
+   .  L  L  L  .  G   
+                        
+
+Move 4: L-right
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   F  H  H  .  I  I   
+   F  J  J  J  .  G   
+   .  .  L  L  L  G   
+                        
+
+Move 5: H-right
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   F  .  H  H  I  I   
+   F  J  J  J  .  G   
+   .  .  L  L  L  G   
+                        
+
+Move 6: F-down
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   .  .  H  H  I  I   
+   F  J  J  J  .  G   
+   F  .  L  L  L  G   
+                        
+
+Move 7: H-left
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  .  .  I  I   
+   F  J  J  J  .  G   
+   F  .  L  L  L  G   
+                        
+
+Move 8: J-right
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  .  .  I  I   
+   F  .  J  J  J  G   
+   F  .  L  L  L  G   
+                        
+
+Move 9: I-left
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  I  I  .  .   
+   F  .  J  J  J  G   
+   F  .  L  L  L  G   
+                        
+
+Move 10: L-left
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  I  I  .  .   
+   F  .  J  J  J  G   
+   F  L  L  L  .  G   
+                        
+
+Move 11: G-up
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  I  I  .  G   
+   F  .  J  J  J  G   
+   F  L  L  L  .  .   
+                        
+
+Move 12: I-right
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  .  I  I  G   
+   F  .  J  J  J  G   
+   F  L  L  L  .  .   
+                        
+
+Move 13: L-right
+                        
+   A  A  A  C  E  D   
+   .  .  B  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  .  I  I  G   
+   F  .  J  J  J  G   
+   F  .  .  L  L  L   
+                        
+
+Move 14: B-down
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  B  I  I  G   
+   F  .  J  J  J  G   
+   F  .  .  L  L  L   
+                        
+
+Move 15: L-left
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  B  I  I  G   
+   F  .  J  J  J  G   
+   F  L  L  L  .  .   
+                        
+
+Move 16: J-left
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  .  K  
+   H  H  B  I  I  G   
+   F  J  J  J  .  G   
+   F  L  L  L  .  .   
+                        
+
+Move 17: G-up
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  G  K  
+   H  H  B  I  I  G   
+   F  J  J  J  .  .   
+   F  L  L  L  .  .   
+                        
+
+Move 18: L-right
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  G  K  
+   H  H  B  I  I  G   
+   F  J  J  J  .  .   
+   F  .  .  L  L  L   
+                        
+
+Move 19: L-left
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  G  K  
+   H  H  B  I  I  G   
+   F  J  J  J  .  .   
+   F  .  L  L  L  .   
+                        
+
+Move 20: J-right
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  B  .  E  G  K  
+   H  H  B  I  I  G   
+   F  .  .  J  J  J   
+   F  .  L  L  L  .   
+                        
+
+Move 21: B-down
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  .  .  E  G  K  
+   H  H  B  I  I  G   
+   F  .  B  J  J  J   
+   F  .  L  L  L  .   
+                        
+
+Move 22: L-right
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   P  P  .  .  E  G  K  
+   H  H  B  I  I  G   
+   F  .  B  J  J  J   
+   F  .  .  L  L  L   
+                        
+
+Move 23: P-right
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   .  P  P  .  E  G  K  
+   H  H  B  I  I  G   
+   F  .  B  J  J  J   
+   F  .  .  L  L  L   
+                        
+
+Move 24: B-down
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   .  P  P  .  E  G  K  
+   H  H  .  I  I  G   
+   F  .  B  J  J  J   
+   F  .  B  L  L  L   
+                        
+
+Move 25: H-right
+                        
+   A  A  A  C  E  D   
+   .  .  .  C  E  D   
+   .  P  P  .  E  G  K  
+   .  H  H  I  I  G   
+   F  .  B  J  J  J   
+   F  .  B  L  L  L   
+                        
+
+Move 26: F-up
+                        
+   A  A  A  C  E  D   
+   F  .  .  C  E  D   
+   F  P  P  .  E  G  K  
+   .  H  H  I  I  G   
+   .  .  B  J  J  J   
+   .  .  B  L  L  L   
+                        
+
+Move 27: P-right
+                        
+   A  A  A  C  E  D   
+   F  .  .  C  E  D   
+   F  .  P  P  E  G  K  
+   .  H  H  I  I  G   
+   .  .  B  J  J  J   
+   .  .  B  L  L  L   
+                        
+
+Move 28: H-left
+                        
+   A  A  A  C  E  D   
+   F  .  .  C  E  D   
+   F  .  P  P  E  G  K  
+   H  H  .  I  I  G   
+   .  .  B  J  J  J   
+   .  .  B  L  L  L   
+                        
+
+Move 29: P-left
+                        
+   A  A  A  C  E  D   
+   F  .  .  C  E  D   
+   F  P  P  .  E  G  K  
+   H  H  .  I  I  G   
+   .  .  B  J  J  J   
+   .  .  B  L  L  L   
+                        
+
+Move 30: B-up
+                        
+   A  A  A  C  E  D   
+   F  .  .  C  E  D   
+   F  P  P  .  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  .  L  L  L   
+                        
+
+Move 31: L-left
+                        
+   A  A  A  C  E  D   
+   F  .  .  C  E  D   
+   F  P  P  .  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  L  L  L  .   
+                        
+
+Move 32: C-down
+                        
+   A  A  A  .  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  L  L  L  .   
+                        
+
+Move 33: L-left
+                        
+   A  A  A  .  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  L  L  L  .  .   
+                        
+
+Move 34: L-left
+                        
+   A  A  A  .  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   L  L  L  .  .  .   
+                        
+
+Move 35: A-right
+                        
+   .  A  A  A  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   L  L  L  .  .  .   
+                        
+
+Move 36: L-right
+                        
+   .  A  A  A  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  .  L  L  L   
+                        
+
+Move 37: L-left
+                        
+   .  A  A  A  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  L  L  L  .   
+                        
+
+Move 38: L-left
+                        
+   .  A  A  A  E  D   
+   F  .  .  C  E  D   
+   F  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  L  L  L  .  .   
+                        
+
+Move 39: F-up
+                        
+   F  A  A  A  E  D   
+   F  .  .  C  E  D   
+   .  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  L  L  L  .  .   
+                        
+
+Move 40: L-right
+                        
+   F  A  A  A  E  D   
+   F  .  .  C  E  D   
+   .  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  .  L  L  L   
+                        
+
+Move 41: L-left
+                        
+   F  A  A  A  E  D   
+   F  .  .  C  E  D   
+   .  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  L  L  L  .   
+                        
+
+Move 42: L-left
+                        
+   F  A  A  A  E  D   
+   F  .  .  C  E  D   
+   .  P  P  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   L  L  L  .  .  .   
+                        
+
+Move 43: P-left
+                        
+   F  A  A  A  E  D   
+   F  .  .  C  E  D   
+   P  P  .  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   L  L  L  .  .  .   
+                        
+
+Move 44: L-right
+                        
+   F  A  A  A  E  D   
+   F  .  .  C  E  D   
+   P  P  .  C  E  G  K  
+   H  H  B  I  I  G   
+   .  .  B  J  J  J   
+   .  .  .  L  L  L   
+                        
+
+Move 45: B-up
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  G  K  
+   H  H  .  I  I  G   
+   .  .  .  J  J  J   
+   .  .  .  L  L  L   
+                        
+
+Move 46: J-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  G  K  
+   H  H  .  I  I  G   
+   .  .  J  J  J  .   
+   .  .  .  L  L  L   
+                        
+
+Move 47: G-down
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  .  I  I  G   
+   .  .  J  J  J  G   
+   .  .  .  L  L  L   
+                        
+
+Move 48: J-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  .  I  I  G   
+   J  J  J  .  .  G   
+   .  .  .  L  L  L   
+                        
+
+Move 49: L-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  .  I  I  G   
+   J  J  J  .  .  G   
+   L  L  L  .  .  .   
+                        
+
+Move 50: I-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  .  G   
+   J  J  J  .  .  G   
+   L  L  L  .  .  .   
+                        
+
+Move 51: E-down
+                        
+   F  A  A  A  .  D   
+   F  .  B  C  .  D   
+   P  P  B  C  .  .  K  
+   H  H  I  I  E  G   
+   J  J  J  .  E  G   
+   L  L  L  .  E  .   
+                        
+
+Move 52: A-right
+                        
+   F  .  A  A  A  D   
+   F  .  B  C  .  D   
+   P  P  B  C  .  .  K  
+   H  H  I  I  E  G   
+   J  J  J  .  E  G   
+   L  L  L  .  E  .   
+                        
+
+Move 53: L-right
+                        
+   F  .  A  A  A  D   
+   F  .  B  C  .  D   
+   P  P  B  C  .  .  K  
+   H  H  I  I  E  G   
+   J  J  J  .  E  G   
+   .  L  L  L  E  .   
+                        
+
+Move 54: A-left
+                        
+   F  A  A  A  .  D   
+   F  .  B  C  .  D   
+   P  P  B  C  .  .  K  
+   H  H  I  I  E  G   
+   J  J  J  .  E  G   
+   .  L  L  L  E  .   
+                        
+
+Move 55: E-up
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  .  G   
+   J  J  J  .  .  G   
+   .  L  L  L  .  .   
+                        
+
+Move 56: J-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  .  G   
+   .  J  J  J  .  G   
+   .  L  L  L  .  .   
+                        
+
+Move 57: J-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  .  G   
+   .  .  J  J  J  G   
+   .  L  L  L  .  .   
+                        
+
+Move 58: L-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  .  G   
+   .  .  J  J  J  G   
+   .  .  L  L  L  .   
+                        
+
+Move 59: E-down
+                        
+   F  A  A  A  .  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  E  G   
+   .  .  J  J  J  G   
+   .  .  L  L  L  .   
+                        
+
+Move 60: G-down
+                        
+   F  A  A  A  .  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  E  .   
+   .  .  J  J  J  G   
+   .  .  L  L  L  G   
+                        
+
+Move 61: E-up
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  I  I  .  .   
+   .  .  J  J  J  G   
+   .  .  L  L  L  G   
+                        
+
+Move 62: I-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   H  H  .  I  I  .   
+   .  .  J  J  J  G   
+   .  .  L  L  L  G   
+                        
+
+Move 63: H-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   .  H  H  I  I  .   
+   .  .  J  J  J  G   
+   .  .  L  L  L  G   
+                        
+
+Move 64: I-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   .  H  H  .  I  I   
+   .  .  J  J  J  G   
+   .  .  L  L  L  G   
+                        
+
+Move 65: H-right
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   .  .  H  H  I  I   
+   .  .  J  J  J  G   
+   .  .  L  L  L  G   
+                        
+
+Move 66: J-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   .  .  H  H  I  I   
+   J  J  J  .  .  G   
+   .  .  L  L  L  G   
+                        
+
+Move 67: H-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  C  E  D   
+   P  P  B  C  E  .  K  
+   .  H  H  .  I  I   
+   J  J  J  .  .  G   
+   .  .  L  L  L  G   
+                        
+
+Move 68: C-down
+                        
+   F  A  A  A  E  D   
+   F  .  B  .  E  D   
+   P  P  B  .  E  .  K  
+   .  H  H  C  I  I   
+   J  J  J  C  .  G   
+   .  .  L  L  L  G   
+                        
+
+Move 69: L-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  .  E  D   
+   P  P  B  .  E  .  K  
+   .  H  H  C  I  I   
+   J  J  J  C  .  G   
+   L  L  L  .  .  G   
+                        
+
+Move 70: C-down
+                        
+   F  A  A  A  E  D   
+   F  .  B  .  E  D   
+   P  P  B  .  E  .  K  
+   .  H  H  .  I  I   
+   J  J  J  C  .  G   
+   L  L  L  C  .  G   
+                        
+
+Move 71: I-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  .  E  D   
+   P  P  B  .  E  .  K  
+   .  H  H  I  I  .   
+   J  J  J  C  .  G   
+   L  L  L  C  .  G   
+                        
+
+Move 72: H-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  .  E  D   
+   P  P  B  .  E  .  K  
+   H  H  .  I  I  .   
+   J  J  J  C  .  G   
+   L  L  L  C  .  G   
+                        
+
+Move 73: I-left
+                        
+   F  A  A  A  E  D   
+   F  .  B  .  E  D   
+   P  P  B  .  E  .  K  
+   H  H  I  I  .  .   
+   J  J  J  C  .  G   
+   L  L  L  C  .  G   
+                        
+
+Move 74: E-down
+                        
+   F  A  A  A  .  D   
+   F  .  B  .  .  D   
+   P  P  B  .  .  .  K  
+   H  H  I  I  E  .   
+   J  J  J  C  E  G   
+   L  L  L  C  E  G   
+                        
+
+Move 75: A-right
+                        
+   F  .  A  A  A  D   
+   F  .  B  .  .  D   
+   P  P  B  .  .  .  K  
+   H  H  I  I  E  .   
+   J  J  J  C  E  G   
+   L  L  L  C  E  G   
+                        
+
+Move 76: G-up
+                        
+   F  .  A  A  A  D   
+   F  .  B  .  .  D   
+   P  P  B  .  .  .  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 77: D-down
+                        
+   F  .  A  A  A  .   
+   F  .  B  .  .  D   
+   P  P  B  .  .  D  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 78: A-right
+                        
+   F  .  .  A  A  A   
+   F  .  B  .  .  D   
+   P  P  B  .  .  D  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 79: B-up
+                        
+   F  .  B  A  A  A   
+   F  .  B  .  .  D   
+   P  P  .  .  .  D  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 80: P-right
+                        
+   F  .  B  A  A  A   
+   F  .  B  .  .  D   
+   .  .  .  P  P  D  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 81: B-down
+                        
+   F  .  .  A  A  A   
+   F  .  B  .  .  D   
+   .  .  B  P  P  D  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 82: A-left
+                        
+   F  A  A  A  .  .   
+   F  .  B  .  .  D   
+   .  .  B  P  P  D  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 83: D-up
+                        
+   F  A  A  A  .  D   
+   F  .  B  .  .  D   
+   .  .  B  P  P  .  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Move 84: P-right
+                        
+   F  A  A  A  .  D   
+   F  .  B  .  .  D   
+   .  .  B  .  .  .  K  
+   H  H  I  I  E  G   
+   J  J  J  C  E  G   
+   L  L  L  C  E  .   
+                        
+
+Nodes visited: 4681
+Execution time: 395ms

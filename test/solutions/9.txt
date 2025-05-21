@@ -1,0 +1,39 @@
+
+Choose algorithm:
+1. UCS (Uniform Cost Search)
+2. GBFS (Greedy Best-First Search)
+3. A* Search
+Choice: 3
+
+Initial board:
+                        
+   A  A  A  C  .  .   
+   B  B  B  C  .  .   
+   P  P  P  .  .  H  K  
+   .  D  .  .  .  H   
+   .  D  F  G  .  H   
+   E  E  F  G  .  .   
+                        
+
+Move 1: H-down
+                        
+   A  A  A  C  .  .   
+   B  B  B  C  .  .   
+   P  P  P  .  .  .  K  
+   .  D  .  .  .  H   
+   .  D  F  G  .  H   
+   E  E  F  G  .  H   
+                        
+
+Move 2: P-right
+                        
+   A  A  A  C  .  .   
+   B  B  B  C  .  .   
+   .  .  .  .  .  .  K  
+   .  D  .  .  .  H   
+   .  D  F  G  .  H   
+   E  E  F  G  .  H   
+                        
+
+Nodes visited: 7
+Execution time: 2ms

@@ -1,0 +1,359 @@
+
+Choose algorithm:
+1. UCS (Uniform Cost Search)
+2. GBFS (Greedy Best-First Search)
+3. A* Search
+Choice: 2
+
+Initial board:
+                        
+   A  .  B  .  .  .   
+   A  .  B  .  C  C   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  E   
+   F  F  F  H  H  E   
+   G  G  G  I  I  .   
+                        
+
+Move 1: E-down
+                        
+   A  .  B  .  .  .   
+   A  .  B  .  C  C   
+   A  P  P  .  D  .  K  
+   .  .  .  .  D  E   
+   F  F  F  H  H  E   
+   G  G  G  I  I  E   
+                        
+
+Move 2: P-right
+                        
+   A  .  B  .  .  .   
+   A  .  B  .  C  C   
+   A  .  P  P  D  .  K  
+   .  .  .  .  D  E   
+   F  F  F  H  H  E   
+   G  G  G  I  I  E   
+                        
+
+Move 3: C-left
+                        
+   A  .  B  .  .  .   
+   A  .  B  C  C  .   
+   A  .  P  P  D  .  K  
+   .  .  .  .  D  E   
+   F  F  F  H  H  E   
+   G  G  G  I  I  E   
+                        
+
+Move 4: E-up
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  .  P  P  D  E  K  
+   .  .  .  .  D  .   
+   F  F  F  H  H  .   
+   G  G  G  I  I  .   
+                        
+
+Move 5: P-left
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   F  F  F  H  H  .   
+   G  G  G  I  I  .   
+                        
+
+Move 6: I-right
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   F  F  F  H  H  .   
+   G  G  G  .  I  I   
+                        
+
+Move 7: G-right
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   F  F  F  H  H  .   
+   .  G  G  G  I  I   
+                        
+
+Move 8: H-right
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   F  F  F  .  H  H   
+   .  G  G  G  I  I   
+                        
+
+Move 9: G-left
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   F  F  F  .  H  H   
+   G  G  G  .  I  I   
+                        
+
+Move 10: F-right
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   .  F  F  F  H  H   
+   G  G  G  .  I  I   
+                        
+
+Move 11: I-left
+                        
+   A  .  B  .  .  E   
+   A  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   .  .  .  .  D  .   
+   .  F  F  F  H  H   
+   G  G  G  I  I  .   
+                        
+
+Move 12: A-down
+                        
+   .  .  B  .  .  E   
+   .  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   A  .  .  .  D  .   
+   A  F  F  F  H  H   
+   G  G  G  I  I  .   
+                        
+
+Move 13: I-right
+                        
+   .  .  B  .  .  E   
+   .  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   A  .  .  .  D  .   
+   A  F  F  F  H  H   
+   G  G  G  .  I  I   
+                        
+
+Move 14: G-right
+                        
+   .  .  B  .  .  E   
+   .  .  B  C  C  E   
+   A  P  P  .  D  E  K  
+   A  .  .  .  D  .   
+   A  F  F  F  H  H   
+   .  G  G  G  I  I   
+                        
+
+Move 15: P-right
+                        
+   .  .  B  .  .  E   
+   .  .  B  C  C  E   
+   A  .  P  P  D  E  K  
+   A  .  .  .  D  .   
+   A  F  F  F  H  H   
+   .  G  G  G  I  I   
+                        
+
+Move 16: A-down
+                        
+   .  .  B  .  .  E   
+   .  .  B  C  C  E   
+   .  .  P  P  D  E  K  
+   A  .  .  .  D  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 17: P-left
+                        
+   .  .  B  .  .  E   
+   .  .  B  C  C  E   
+   P  P  .  .  D  E  K  
+   A  .  .  .  D  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 18: B-down
+                        
+   .  .  .  .  .  E   
+   .  .  .  C  C  E   
+   P  P  B  .  D  E  K  
+   A  .  B  .  D  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 19: C-left
+                        
+   .  .  .  .  .  E   
+   .  .  C  C  .  E   
+   P  P  B  .  D  E  K  
+   A  .  B  .  D  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 20: D-up
+                        
+   .  .  .  .  D  E   
+   .  .  C  C  D  E   
+   P  P  B  .  .  E  K  
+   A  .  B  .  .  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 21: C-left
+                        
+   .  .  .  .  D  E   
+   C  C  .  .  D  E   
+   P  P  B  .  .  E  K  
+   A  .  B  .  .  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 22: B-up
+                        
+   .  .  B  .  D  E   
+   C  C  B  .  D  E   
+   P  P  .  .  .  E  K  
+   A  .  .  .  .  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 23: P-right
+                        
+   .  .  B  .  D  E   
+   C  C  B  .  D  E   
+   .  P  P  .  .  E  K  
+   A  .  .  .  .  .   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 24: E-down
+                        
+   .  .  B  .  D  .   
+   C  C  B  .  D  E   
+   .  P  P  .  .  E  K  
+   A  .  .  .  .  E   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 25: P-right
+                        
+   .  .  B  .  D  .   
+   C  C  B  .  D  E   
+   .  .  .  P  P  E  K  
+   A  .  .  .  .  E   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 26: B-down
+                        
+   .  .  .  .  D  .   
+   C  C  .  .  D  E   
+   .  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 27: C-right
+                        
+   .  .  .  .  D  .   
+   .  .  C  C  D  E   
+   .  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   A  F  F  F  H  H   
+   A  G  G  G  I  I   
+                        
+
+Move 28: A-up
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  E   
+   A  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   .  F  F  F  H  H   
+   .  G  G  G  I  I   
+                        
+
+Move 29: G-left
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  E   
+   A  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   .  F  F  F  H  H   
+   G  G  G  .  I  I   
+                        
+
+Move 30: I-left
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  E   
+   A  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   .  F  F  F  H  H   
+   G  G  G  I  I  .   
+                        
+
+Move 31: F-left
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  E   
+   A  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   F  F  F  .  H  H   
+   G  G  G  I  I  .   
+                        
+
+Move 32: H-left
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  E   
+   A  .  B  P  P  E  K  
+   A  .  B  .  .  E   
+   F  F  F  H  H  .   
+   G  G  G  I  I  .   
+                        
+
+Move 33: E-down
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  .   
+   A  .  B  P  P  .  K  
+   A  .  B  .  .  E   
+   F  F  F  H  H  E   
+   G  G  G  I  I  E   
+                        
+
+Move 34: P-right
+                        
+   .  .  .  .  D  .   
+   A  .  C  C  D  .   
+   A  .  B  .  .  .  K  
+   A  .  B  .  .  E   
+   F  F  F  H  H  E   
+   G  G  G  I  I  E   
+                        
+
+Nodes visited: 444
+Execution time: 36ms

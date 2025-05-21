@@ -1,0 +1,8 @@
+6 6
+11
+ ..BCC.
+ AAB...
+ DEFGHH
+KDEFGPP
+ .EIIIL
+ ..JJJL
